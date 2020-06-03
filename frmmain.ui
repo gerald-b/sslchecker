@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>FrmMain</class>
- <widget class="QMainWindow" name="FrmMain">
+ <class>FRMMAIN</class>
+ <widget class="QMainWindow" name="FRMMAIN">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,9 +13,95 @@
   <property name="windowTitle">
    <string>FrmMain</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTableWidget" name="tblCertList">
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>NAME</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>DATEFROM</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>DATETO</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="btnAdd">
+        <property name="text">
+         <string>ADD</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnDelete">
+        <property name="text">
+         <string>REMOVE</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnDetails">
+        <property name="text">
+         <string>DETAILS</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_FILE">
+    <property name="title">
+     <string>&amp;FILE</string>
+    </property>
+    <addaction name="action_EXIT"/>
+   </widget>
+   <addaction name="menu_FILE"/>
+  </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_EXIT">
+   <property name="text">
+    <string>&amp;EXIT</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

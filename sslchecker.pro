@@ -17,10 +17,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    frmmain.cpp
+    frmmain.cpp \
+    mycertvaliddate.cpp
 
 HEADERS += \
-    frmmain.hpp
+    frmmain.hpp \
+    mycertstates.hpp \
+    mycertvaliddate.hpp
 
 FORMS += \
     frmmain.ui

@@ -37,6 +37,16 @@
         <string>DATETO</string>
        </property>
       </column>
+      <column>
+       <property name="text">
+        <string>AFFECTEDDOMAINS</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>AFFECTEDHOSTS</string>
+       </property>
+      </column>
      </widget>
     </item>
     <item>

@@ -2,6 +2,7 @@
 #define FRMMAIN_HPP
 
 #include <QMainWindow>
+#include "mycert.hpp"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class FrmMain; }
@@ -17,5 +18,6 @@ public:
 
 private:
     Ui::FrmMain *ui;
+    QList<MyCert *> mycertlist;
 };
 #endif // FRMMAIN_HPP

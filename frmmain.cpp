@@ -10,6 +10,20 @@ FrmMain::FrmMain(QWidget *parent)
     // this->ui->tblCertList->setColumnHidden(0,true);
 
     connect(this->ui->action_EXIT,&QAction::triggered,this,&QApplication::exit);
+
+    // TEST START
+    MyCert * c = new MyCert("*.example.com");
+    c->appendValidDate(MyCertValidDate(QDate(2018,06,13),QDate(2020,6,26),MyCertStates::ACTIVE));
+    c->appendAffectedDomain("blog.example.com");
+    c->appendAffectedDomain("grafana.example.com");
+    c->appendAffectedHost("fqdn.example.com");
+    this->mycertlist.append(c);
+
+    this->ui->tblCertList->setRowCount(1);
+    this->ui->tblCertList->setItem(0,1,new QTableWidgetItem(this->mycertlist.at(0)->certName()));
+    this->ui->tblCertList->setItem(0,2,new QTableWidgetItem(this->mycertlist.at(0)->getActiveValidFromDate().toString(Qt::ISODate)));
+    this->ui->tblCertList->setItem(0,3,new QTableWidgetItem(this->mycertlist.at(0)->getActiveValidToDate().toString(Qt::ISODate)));
+    // TEST END
 }
 
 FrmMain::~FrmMain()

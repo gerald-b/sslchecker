@@ -23,6 +23,8 @@ FrmMain::FrmMain(QWidget *parent)
     this->ui->tblCertList->setItem(0,1,new QTableWidgetItem(this->mycertlist.at(0)->certName()));
     this->ui->tblCertList->setItem(0,2,new QTableWidgetItem(this->mycertlist.at(0)->getActiveValidFromDate().toString(Qt::ISODate)));
     this->ui->tblCertList->setItem(0,3,new QTableWidgetItem(this->mycertlist.at(0)->getActiveValidToDate().toString(Qt::ISODate)));
+    this->ui->tblCertList->setItem(0,4,new QTableWidgetItem(QString::number(this->mycertlist.at(0)->getCountAffectedDomains())));
+    this->ui->tblCertList->setItem(0,5,new QTableWidgetItem(QString::number(this->mycertlist.at(0)->getCountAffectedHosts())));
     // TEST END
 }
 

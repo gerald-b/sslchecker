@@ -26,6 +26,21 @@ FrmMain::FrmMain(QWidget *parent)
             MyCert * c = new MyCert(query.value(0).toInt(),query.value(1).toString());
             this->mycertlist.append(c);
         }
+
+        for(int i=0; i<this->mycertlist.count(); ++i)
+        {
+            MyCert * c = this->mycertlist.at(i);
+            query.exec("SELECT * FROM `tbl_domains` WHERE `fk_certs` ='" + QString::number(c->certID()) + "'");
+            while(query.next())
+            {
+                c->appendAffectedDomain(MyCertAffectedDomain(query.value(0).toInt(), query.value(2).toString(), static_cast<MyCertStates>(query.value(3).toInt())));
+            }
+            query.exec("SELECT * FROM `tbl_hosts` WHERE `fk_certs` ='" + QString::number(c->certID()) + "'");
+            while(query.next())
+            {
+                c->appendAffectedHost(MyCertAffectedHost(query.value(0).toInt(), query.value(2).toString(), static_cast<MyCertStates>(query.value(3).toInt())));
+            }
+        }
     }
 
     /*

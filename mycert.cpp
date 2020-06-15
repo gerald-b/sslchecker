@@ -58,12 +58,23 @@ QDate MyCert::getActiveValidToDate()
     return res;
 }
 
+int MyCert::certID() const
+{
+    return _certID;
+}
+
+void MyCert::setCertID(int certID)
+{
+    _certID = certID;
+}
+
 void MyCert::setCertName(const QString &certName)
 {
     _certName = certName;
 }
 
-MyCert::MyCert(QString name)
+MyCert::MyCert(int id, QString name)
 {
+    this->setCertID(id);
     this->setCertName(name);
 }

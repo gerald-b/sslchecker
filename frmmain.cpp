@@ -11,7 +11,9 @@ FrmMain::FrmMain(QWidget *parent)
 
     connect(this->ui->action_EXIT,&QAction::triggered,this,&QApplication::exit);
 
+    //**********
     // TEST START
+    //**********
     MyCert * c = new MyCert("*.example.com");
     c->appendValidDate(MyCertValidDate(QDate(2018,06,13),QDate(2020,6,26),MyCertStates::ACTIVE));
     c->appendAffectedDomain("blog.example.com");
@@ -19,13 +21,19 @@ FrmMain::FrmMain(QWidget *parent)
     c->appendAffectedHost("fqdn.example.com");
     this->mycertlist.append(c);
 
-    this->ui->tblCertList->setRowCount(1);
-    this->ui->tblCertList->setItem(0,1,new QTableWidgetItem(this->mycertlist.at(0)->certName()));
-    this->ui->tblCertList->setItem(0,2,new QTableWidgetItem(this->mycertlist.at(0)->getActiveValidFromDate().toString(Qt::ISODate)));
-    this->ui->tblCertList->setItem(0,3,new QTableWidgetItem(this->mycertlist.at(0)->getActiveValidToDate().toString(Qt::ISODate)));
-    this->ui->tblCertList->setItem(0,4,new QTableWidgetItem(QString::number(this->mycertlist.at(0)->getCountAffectedDomains())));
-    this->ui->tblCertList->setItem(0,5,new QTableWidgetItem(QString::number(this->mycertlist.at(0)->getCountAffectedHosts())));
+    for (int i=0; i<this->mycertlist.count(); ++i)
+    {
+        int curRow = this->ui->tblCertList->rowCount();
+        this->ui->tblCertList->setRowCount(curRow+1);
+        this->ui->tblCertList->setItem(curRow,1,new QTableWidgetItem(this->mycertlist.at(i)->certName()));
+        this->ui->tblCertList->setItem(curRow,2,new QTableWidgetItem(this->mycertlist.at(i)->getActiveValidFromDate().toString(Qt::ISODate)));
+        this->ui->tblCertList->setItem(curRow,3,new QTableWidgetItem(this->mycertlist.at(i)->getActiveValidToDate().toString(Qt::ISODate)));
+        this->ui->tblCertList->setItem(curRow,4,new QTableWidgetItem(QString::number(this->mycertlist.at(i)->getCountAffectedDomains())));
+        this->ui->tblCertList->setItem(curRow,5,new QTableWidgetItem(QString::number(this->mycertlist.at(i)->getCountAffectedHosts())));
+    }
+    //**********
     // TEST END
+    //**********
 }
 
 FrmMain::~FrmMain()

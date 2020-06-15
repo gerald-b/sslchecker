@@ -1,0 +1,11 @@
+BEGIN TRANSACTION;
+INSERT INTO `tbl_validdates` VALUES (1,1,2018,6,13,2020,6,26,0);
+INSERT INTO `tbl_validdates` VALUES (2,1,2015,6,26,2018,6,26,1);
+INSERT INTO `tbl_validdates` VALUES (3,2,2020,5,14,2022,6,13,0);
+INSERT INTO `tbl_hosts` VALUES (1,1,'fqdn.example.com',0);
+INSERT INTO `tbl_domains` VALUES (1,1,'blog.example.com',0);
+INSERT INTO `tbl_domains` VALUES (2,1,'grafana.example.com',0);
+INSERT INTO `tbl_certs` VALUES (1,'*.example.com',0);
+INSERT INTO `tbl_certs` VALUES (2,'mail.example.com',0);
+INSERT INTO `tbl_certs` VALUES (3,'blog.example.com',1);
+COMMIT;

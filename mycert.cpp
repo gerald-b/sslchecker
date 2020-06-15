@@ -15,7 +15,7 @@ void MyCert::appendAffectedDomain(MyCertAffectedDomain domain)
     this->affectedDomains.append(domain);
 }
 
-void MyCert::appendAffectedHost(QString host)
+void MyCert::appendAffectedHost(MyCertAffectedHost host)
 {
     this->affectedHosts.append(host);
 }

@@ -5,7 +5,7 @@
 enum class MyCertStates
 {
     ACTIVE,
-    DEACTIVE,
+    INACTIVE,
     DELETED,
     UNDEFINED
 };

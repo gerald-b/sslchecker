@@ -2,6 +2,8 @@
 #define FRMMAIN_HPP
 
 #include <QMainWindow>
+#include <QSqlDatabase>
+#include <QSqlQuery>
 #include "mycert.hpp"
 
 QT_BEGIN_NAMESPACE

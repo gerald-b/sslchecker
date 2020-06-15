@@ -14,12 +14,28 @@ FrmMain::FrmMain(QWidget *parent)
     //**********
     // TEST START
     //**********
+    QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE");
+    mydb.setDatabaseName("./certdata.db");
+
+    if (mydb.open())
+    {
+        QSqlQuery query(mydb);
+        query.exec("SELECT * FROM `tbl_certs`");
+        while(query.next())
+        {
+            MyCert * c = new MyCert(query.value(1).toString());
+            this->mycertlist.append(c);
+        }
+    }
+
+    /*
     MyCert * c = new MyCert("*.example.com");
     c->appendValidDate(MyCertValidDate(QDate(2018,06,13),QDate(2020,6,26),MyCertStates::ACTIVE));
     c->appendAffectedDomain("blog.example.com");
     c->appendAffectedDomain("grafana.example.com");
     c->appendAffectedHost("fqdn.example.com");
     this->mycertlist.append(c);
+    */
 
     for (int i=0; i<this->mycertlist.count(); ++i)
     {

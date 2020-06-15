@@ -19,11 +19,13 @@ SOURCES += \
     main.cpp \
     frmmain.cpp \
     mycert.cpp \
+    mycertaffecteddomain.cpp \
     mycertvaliddate.cpp
 
 HEADERS += \
     frmmain.hpp \
     mycert.hpp \
+    mycertaffecteddomain.hpp \
     mycertstates.hpp \
     mycertvaliddate.hpp
 

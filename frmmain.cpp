@@ -23,7 +23,7 @@ FrmMain::FrmMain(QWidget *parent)
         query.exec("SELECT * FROM `tbl_certs`");
         while(query.next())
         {
-            MyCert * c = new MyCert(query.value(1).toString());
+            MyCert * c = new MyCert(query.value(0).toInt(),query.value(1).toString());
             this->mycertlist.append(c);
         }
     }
@@ -41,6 +41,7 @@ FrmMain::FrmMain(QWidget *parent)
     {
         int curRow = this->ui->tblCertList->rowCount();
         this->ui->tblCertList->setRowCount(curRow+1);
+        this->ui->tblCertList->setItem(curRow,0,new QTableWidgetItem(QString::number(this->mycertlist.at(i)->certID())));
         this->ui->tblCertList->setItem(curRow,1,new QTableWidgetItem(this->mycertlist.at(i)->certName()));
         this->ui->tblCertList->setItem(curRow,2,new QTableWidgetItem(this->mycertlist.at(i)->getActiveValidFromDate().toString(Qt::ISODate)));
         this->ui->tblCertList->setItem(curRow,3,new QTableWidgetItem(this->mycertlist.at(i)->getActiveValidToDate().toString(Qt::ISODate)));

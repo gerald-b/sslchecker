@@ -3,6 +3,7 @@
 
 #include <QList>
 #include "mycertvaliddate.hpp"
+#include "mycertaffecteddomain.hpp"
 
 class MyCert
 {
@@ -10,7 +11,7 @@ private:
     QString _certName;
     int _certID;
     QList<MyCertValidDate> validList;
-    QList<QString> affectedDomains;
+    QList<MyCertAffectedDomain> affectedDomains;
     QList<QString> affectedHosts;
 
     void setCertName(const QString &certName);
@@ -21,7 +22,7 @@ public:
     QString certName() const;
     int certID() const;
     void appendValidDate(MyCertValidDate date);
-    void appendAffectedDomain(QString domain);
+    void appendAffectedDomain(MyCertAffectedDomain domain);
     void appendAffectedHost(QString host);
     int getCountAffectedDomains(void);
     int getCountAffectedHosts(void);

@@ -10,7 +10,7 @@ void MyCert::appendValidDate(MyCertValidDate date)
     this->validList.append(date);
 }
 
-void MyCert::appendAffectedDomain(QString domain)
+void MyCert::appendAffectedDomain(MyCertAffectedDomain domain)
 {
     this->affectedDomains.append(domain);
 }

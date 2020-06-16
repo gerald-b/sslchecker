@@ -5,6 +5,7 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include "mycert.hpp"
+#include "frmdetail.hpp"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class FrmMain; }
@@ -17,6 +18,9 @@ class FrmMain : public QMainWindow
 public:
     FrmMain(QWidget *parent = nullptr);
     ~FrmMain();
+
+private slots:
+    void on_btnDetails_clicked();
 
 private:
     Ui::FrmMain *ui;

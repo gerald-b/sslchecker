@@ -81,3 +81,10 @@ FrmMain::~FrmMain()
     delete ui;
 }
 
+
+void FrmMain::on_btnDetails_clicked()
+{
+    FrmDetail * detail = new FrmDetail(this);
+    detail->setWindowModality(Qt::ApplicationModal);
+    detail->show();
+}

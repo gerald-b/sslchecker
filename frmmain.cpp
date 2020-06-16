@@ -62,10 +62,18 @@ FrmMain::FrmMain(QWidget *parent)
         this->ui->tblCertList->setItem(curRow,3,new QTableWidgetItem(this->mycertlist.at(i)->getActiveValidToDate().toString(Qt::ISODate)));
         this->ui->tblCertList->setItem(curRow,4,new QTableWidgetItem(QString::number(this->mycertlist.at(i)->getCountAffectedDomains())));
         this->ui->tblCertList->setItem(curRow,5,new QTableWidgetItem(QString::number(this->mycertlist.at(i)->getCountAffectedHosts())));
+        this->ui->tblCertList->setItem(curRow,6,new QTableWidgetItem(""));
+        for(int z=0;z<=6;++z)
+        {
+            QTableWidgetItem * item = this->ui->tblCertList->item(curRow ,z);
+            item->setFlags(item->flags() ^ Qt::ItemIsEditable);
+        }
     }
     //**********
     // TEST END
     //**********
+    this->ui->tblCertList->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    this->ui->tblCertList->horizontalHeader()->setStretchLastSection(true);
 }
 
 FrmMain::~FrmMain()

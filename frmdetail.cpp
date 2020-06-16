@@ -6,6 +6,9 @@ FrmDetail::FrmDetail(QWidget *parent) :
     ui(new Ui::FrmDetail)
 {
     ui->setupUi(this);
+
+
+    connect(this->ui->action_EXIT,&QAction::triggered,this,&QMainWindow::close);
 }
 
 FrmDetail::~FrmDetail()

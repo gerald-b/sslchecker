@@ -40,6 +40,25 @@ FrmMain::FrmMain(QWidget *parent)
             {
                 c->appendAffectedHost(MyCertAffectedHost(query.value(0).toInt(), query.value(2).toString(), static_cast<MyCertStates>(query.value(3).toInt())));
             }
+            query.exec("SELECT * FROM `tbl_validdates` WHERE `fk_certs` ='" + QString::number(c->certID()) + "'");
+            while(query.next())
+            {
+                c->appendValidDate(MyCertValidDate(
+                                       query.value(0).toInt(),
+                                       QDate(
+                                           query.value(2).toInt(),
+                                           query.value(3).toInt(),
+                                           query.value(4).toInt()
+                                           ),
+                                       QDate(
+                                           query.value(5).toInt(),
+                                           query.value(6).toInt(),
+                                           query.value(7).toInt()
+                                           ),
+                                       static_cast<MyCertStates>(query.value(8).toInt())
+                                       )
+                                   );
+            }
         }
     }
 

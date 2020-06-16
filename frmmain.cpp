@@ -93,6 +93,8 @@ FrmMain::FrmMain(QWidget *parent)
     //**********
     this->ui->tblCertList->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     this->ui->tblCertList->horizontalHeader()->setStretchLastSection(true);
+    this->ui->tblCertList->sortItems(3, Qt::SortOrder::DescendingOrder);
+    this->ui->tblCertList->setSortingEnabled(true);
 }
 
 FrmMain::~FrmMain()

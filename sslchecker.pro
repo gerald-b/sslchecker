@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    frmdetail.cpp \
     main.cpp \
     frmmain.cpp \
     mycert.cpp \
@@ -24,6 +25,7 @@ SOURCES += \
     mycertvaliddate.cpp
 
 HEADERS += \
+    frmdetail.hpp \
     frmmain.hpp \
     mycert.hpp \
     mycertaffecteddomain.hpp \
@@ -32,6 +34,7 @@ HEADERS += \
     mycertvaliddate.hpp
 
 FORMS += \
+    frmdetail.ui \
     frmmain.ui
 
 # Default rules for deployment.

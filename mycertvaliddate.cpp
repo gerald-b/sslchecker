@@ -20,11 +20,22 @@ void MyCertValidDate::setState(const MyCertStates &value)
     state = value;
 }
 
-MyCertValidDate::MyCertValidDate(QDate from, QDate to, MyCertStates state)
+MyCertValidDate::MyCertValidDate(int id, QDate from, QDate to, MyCertStates state)
 {
+    this->setDateID(id);
     this->setValidFrom(from);
     this->setValidTo(to);
     this->setState(state);
+}
+
+int MyCertValidDate::dateID() const
+{
+    return _dateID;
+}
+
+void MyCertValidDate::setDateID(int dateID)
+{
+    _dateID = dateID;
 }
 
 void MyCertValidDate::setValidFrom(const QDate &value)

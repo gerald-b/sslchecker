@@ -128,6 +128,11 @@ void FrmMain::on_btnDetails_clicked()
         }
     }
     FrmDetail * detail = new FrmDetail(this);
+    connect(this,&FrmMain::sendSelectedCert,detail,&FrmDetail::getCert4View);
+
     detail->setWindowModality(Qt::ApplicationModal);
+
+    emit this->sendSelectedCert(selectCert);
+
     detail->show();
 }

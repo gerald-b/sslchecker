@@ -22,6 +22,8 @@ public:
 private slots:
     void on_btnDetails_clicked();
 
+signals:
+    void sendSelectedCert(MyCert *);
 private:
     Ui::FrmMain *ui;
     QList<MyCert *> mycertlist;

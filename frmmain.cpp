@@ -105,6 +105,28 @@ FrmMain::~FrmMain()
 
 void FrmMain::on_btnDetails_clicked()
 {
+    int detailID = -1;
+    MyCert * selectCert = nullptr;
+
+    if (0 < this->ui->tblCertList->selectionModel()->selectedRows().count())
+    {
+        detailID = this->ui->tblCertList->selectionModel()->selectedRows().value(0).data().toInt();
+    }
+
+    if (-1 == detailID)
+    {
+        // ToDo
+        // Error Handling
+        return;
+    }
+    for(int i=0; i< this->mycertlist.count(); ++i )
+    {
+        if (this->mycertlist.at(i)->certID() == detailID)
+        {
+            selectCert = this->mycertlist.at(i);
+            break;
+        }
+    }
     FrmDetail * detail = new FrmDetail(this);
     detail->setWindowModality(Qt::ApplicationModal);
     detail->show();

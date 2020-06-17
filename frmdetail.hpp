@@ -25,6 +25,8 @@ private:
 
     MyCert *getCert() const;
     void setCert(MyCert *cert);
+
+    void displayCert(void);
 };
 
 #endif // FRMDETAIL_HPP

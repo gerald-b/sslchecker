@@ -58,6 +58,11 @@ QDate MyCert::getActiveValidToDate()
     return res;
 }
 
+QList<MyCertValidDate> MyCert::getValidDates() const
+{
+    return this->validList;
+}
+
 int MyCert::certID() const
 {
     return _certID;

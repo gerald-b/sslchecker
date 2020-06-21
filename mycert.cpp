@@ -68,6 +68,11 @@ QList<MyCertAffectedHost> MyCert::getAffectedHosts() const
     return this->affectedHosts;
 }
 
+QList<MyCertAffectedDomain> MyCert::getAffectedDomains() const
+{
+    return this->affectedDomains;
+}
+
 int MyCert::certID() const
 {
     return _certID;

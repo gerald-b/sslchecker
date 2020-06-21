@@ -71,7 +71,7 @@ void FrmDetail::displayCert()
                 item->setFlags(item->flags() ^ Qt::ItemIsEditable);
             }
         }
-
+        // Display AffectedHosts
         QList<MyCertAffectedHost> cah = this->getCert()->getAffectedHosts();
         for (int i = 0; i<cah.count();++i)
         {
@@ -96,11 +96,38 @@ void FrmDetail::displayCert()
                 item->setFlags(item->flags() ^ Qt::ItemIsEditable);
             }
         }
+        // Display AffectedDomains
+        QList<MyCertAffectedDomain> cad = this->getCert()->getAffectedDomains();
+        for (int i = 0; i<cad.count();++i)
+        {
+            int curRowAffectedDomains = this->ui->tblDomains->rowCount();
+            this->ui->tblDomains->setRowCount(curRowAffectedDomains+1);
+            this->ui->tblDomains->setItem(curRowAffectedDomains, 0,
+                                             new QTableWidgetItem(
+                                                 QString::number(cad.at(i).domainID())
+                                                 )
+                                             );
+            this->ui->tblDomains->setItem(curRowAffectedDomains, 1,
+                                             new QTableWidgetItem(
+                                                 cad.at(i).domainname()
+                                                 )
+                                             );
+            this->ui->tblDomains->setItem(curRowAffectedDomains, 2,
+                                             new QTableWidgetItem("")
+                                             );
+            for(int z=0;z<this->ui->tblDomains->columnCount();++z)
+            {
+                QTableWidgetItem * item = this->ui->tblDomains->item(curRowAffectedDomains ,z);
+                item->setFlags(item->flags() ^ Qt::ItemIsEditable);
+            }
+        }
 
         this->ui->tblValidDates->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
         this->ui->tblValidDates->horizontalHeader()->setStretchLastSection(true);
         this->ui->tblHosts->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
         this->ui->tblHosts->horizontalHeader()->setStretchLastSection(true);
+        this->ui->tblDomains->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+        this->ui->tblDomains->horizontalHeader()->setStretchLastSection(true);
     }
 }
 

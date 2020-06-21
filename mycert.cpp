@@ -63,6 +63,11 @@ QList<MyCertValidDate> MyCert::getValidDates() const
     return this->validList;
 }
 
+QList<MyCertAffectedHost> MyCert::getAffectedHosts() const
+{
+    return this->affectedHosts;
+}
+
 int MyCert::certID() const
 {
     return _certID;

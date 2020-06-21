@@ -72,8 +72,35 @@ void FrmDetail::displayCert()
             }
         }
 
+        QList<MyCertAffectedHost> cah = this->getCert()->getAffectedHosts();
+        for (int i = 0; i<cah.count();++i)
+        {
+            int curRowAffectedHosts = this->ui->tblHosts->rowCount();
+            this->ui->tblHosts->setRowCount(curRowAffectedHosts+1);
+            this->ui->tblHosts->setItem(curRowAffectedHosts, 0,
+                                             new QTableWidgetItem(
+                                                 QString::number(cah.at(i).hostID())
+                                                 )
+                                             );
+            this->ui->tblHosts->setItem(curRowAffectedHosts, 1,
+                                             new QTableWidgetItem(
+                                                 cah.at(i).hostname()
+                                                 )
+                                             );
+            this->ui->tblHosts->setItem(curRowAffectedHosts, 2,
+                                             new QTableWidgetItem("")
+                                             );
+            for(int z=0;z<this->ui->tblHosts->columnCount();++z)
+            {
+                QTableWidgetItem * item = this->ui->tblHosts->item(curRowAffectedHosts ,z);
+                item->setFlags(item->flags() ^ Qt::ItemIsEditable);
+            }
+        }
+
         this->ui->tblValidDates->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
         this->ui->tblValidDates->horizontalHeader()->setStretchLastSection(true);
+        this->ui->tblHosts->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+        this->ui->tblHosts->horizontalHeader()->setStretchLastSection(true);
     }
 }
 

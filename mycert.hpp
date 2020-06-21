@@ -30,6 +30,7 @@ public:
     QDate getActiveValidFromDate(void);
     QDate getActiveValidToDate(void);
     QList<MyCertValidDate> getValidDates(void) const;
+    QList<MyCertAffectedHost> getAffectedHosts(void) const;
 };
 
 #endif // MYCERT_HPP

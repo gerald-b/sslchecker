@@ -22,7 +22,8 @@ SOURCES += \
     mycert.cpp \
     mycertaffecteddomain.cpp \
     mycertaffectedhost.cpp \
-    mycertvaliddate.cpp
+    mycertvaliddate.cpp \
+    mysettings.cpp
 
 HEADERS += \
     frmdetail.hpp \
@@ -31,7 +32,8 @@ HEADERS += \
     mycertaffecteddomain.hpp \
     mycertaffectedhost.hpp \
     mycertstates.hpp \
-    mycertvaliddate.hpp
+    mycertvaliddate.hpp \
+    mysettings.hpp
 
 FORMS += \
     frmdetail.ui \

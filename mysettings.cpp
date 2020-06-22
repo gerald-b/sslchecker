@@ -25,3 +25,8 @@ QVariant MySettings::getValue(const QString &key, const QVariant &defaultValue)
 {
     return this->value(key,defaultValue);
 }
+
+void MySettings::setValue(const QString &key, const QVariant &value)
+{
+    this->_settings->setValue(key,value);
+}

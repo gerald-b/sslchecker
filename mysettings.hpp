@@ -25,6 +25,7 @@ public:
 
     QVariant value(const QString &key, const QVariant &defaultValue = QVariant());
     QVariant getValue(const QString &key, const QVariant &defaultValue = QVariant());
+    void setValue(const QString &key, const QVariant &value);
 };
 
 #endif // MYSETTINGS_HPP

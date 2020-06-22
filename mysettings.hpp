@@ -1,10 +1,15 @@
 #ifndef MYSETTINGS_HPP
 #define MYSETTINGS_HPP
 
+#include <QSettings>
+#include <QVariant>
+#include <QString>
+
 class MySettings
 {
 private:
     static MySettings *_instance;
+    QSettings *_settings;
     MySettings();
 public:
     static MySettings *getInstance(void);
@@ -18,6 +23,8 @@ public:
     //       before deleted status
     // Thanks stackoverflow and the community
 
+    QVariant value(const QString &key, const QVariant &defaultValue = QVariant());
+    QVariant getValue(const QString &key, const QVariant &defaultValue = QVariant());
 };
 
 #endif // MYSETTINGS_HPP

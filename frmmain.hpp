@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QMessageBox>
 #include "mycert.hpp"
 #include "frmdetail.hpp"
 

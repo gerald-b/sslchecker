@@ -115,8 +115,7 @@ void FrmMain::on_btnDetails_clicked()
 
     if (-1 == detailID)
     {
-        // ToDo
-        // Error Handling
+        QMessageBox::warning(this,tr("ERROR"),tr("NO ENTRY FOR DETAILVIEW SELECTED"),QMessageBox::Ok,QMessageBox::Ok);
         return;
     }
     for(int i=0; i< this->mycertlist.count(); ++i )

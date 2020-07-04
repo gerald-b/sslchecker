@@ -1,189 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="de_DE">
 <context>
     <name>FrmDetail</name>
     <message>
         <source>FRMDETAIL</source>
-        <translation type="unfinished"></translation>
+        <translation>SSL Checker - Details</translation>
     </message>
     <message>
         <source>CERTID</source>
-        <translation type="unfinished"></translation>
+        <translation>Zertifikats-ID</translation>
     </message>
     <message>
         <source>CERTNAME</source>
-        <translation type="unfinished"></translation>
+        <translation>Zertifikatsname</translation>
     </message>
     <message>
         <source>CERTSTATUS</source>
-        <translation type="unfinished"></translation>
+        <translation>Status</translation>
     </message>
     <message>
         <source>VALIDDATES</source>
-        <translation type="unfinished"></translation>
+        <translation>Gültigskeitsdaten</translation>
     </message>
     <message>
         <source>ID</source>
-        <translation type="unfinished"></translation>
+        <translation>ID</translation>
     </message>
     <message>
         <source>DATEFROM</source>
-        <translation type="unfinished"></translation>
+        <translation>Gültig ab</translation>
     </message>
     <message>
         <source>DATETO</source>
-        <translation type="unfinished"></translation>
+        <translation>Gültig bis</translation>
     </message>
     <message>
         <source>ADD</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <source>REMOVE</source>
-        <translation type="unfinished"></translation>
+        <translation>Entfernen</translation>
     </message>
     <message>
         <source>DOMAINS</source>
-        <translation type="unfinished"></translation>
+        <translation>Domains</translation>
     </message>
     <message>
         <source>DOMAINNAME</source>
-        <translation type="unfinished"></translation>
+        <translation>Domainname</translation>
     </message>
     <message>
         <source>HOSTS</source>
-        <translation type="unfinished"></translation>
+        <translation>Hosts</translation>
     </message>
     <message>
         <source>HOSTNAME</source>
-        <translation type="unfinished"></translation>
+        <translation>Hostname</translation>
     </message>
     <message>
         <source>ALERTINTERVAL</source>
-        <translation type="unfinished"></translation>
+        <translation>Alarminterval</translation>
     </message>
     <message>
         <source>ALERTLEVEL_1</source>
-        <translation type="unfinished"></translation>
+        <translation>Alarmlevel 1</translation>
     </message>
     <message>
         <source>ALERTLEVEL_2</source>
-        <translation type="unfinished"></translation>
+        <translation>Alarmlevel 2</translation>
     </message>
     <message>
         <source>ALERTLEVEL_3</source>
-        <translation type="unfinished"></translation>
+        <translation>Alarmlevel 3</translation>
     </message>
     <message>
         <source>ALERTLEVEL_4</source>
-        <translation type="unfinished"></translation>
+        <translation>Alarmlevel 4</translation>
     </message>
     <message>
         <source>ALERTLEVEL_5</source>
-        <translation type="unfinished"></translation>
+        <translation>Alarmlevel 5</translation>
     </message>
     <message>
         <source>ALERTMAIL (ONEPERLINE)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zu Alamierende E-Mail-Adressen (Eine je Zeile)</translation>
     </message>
     <message>
         <source>&amp;FILE</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Datei</translation>
     </message>
     <message>
         <source>&amp;EXIT</source>
-        <translation type="unfinished"></translation>
+        <translation>B&amp;eenden</translation>
     </message>
 </context>
 <context>
     <name>FrmMain</name>
     <message>
         <source>FRMMAIN</source>
-        <translation type="unfinished"></translation>
+        <translation>SSL Checker</translation>
     </message>
     <message>
         <source>ID</source>
-        <translation type="unfinished"></translation>
+        <translation>ID</translation>
     </message>
     <message>
         <source>NAME</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <source>DATEFROM</source>
-        <translation type="unfinished"></translation>
+        <translation>Gültig von</translation>
     </message>
     <message>
         <source>DATETO</source>
-        <translation type="unfinished"></translation>
+        <translation>Gültig bis</translation>
     </message>
     <message>
         <source>AFFECTEDDOMAINS</source>
-        <translation type="unfinished"></translation>
+        <translation>Anz. Domains</translation>
     </message>
     <message>
         <source>AFFECTEDHOSTS</source>
-        <translation type="unfinished"></translation>
+        <translation>Anz. Hosts</translation>
     </message>
     <message>
         <source>ADD</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <source>REMOVE</source>
-        <translation type="unfinished"></translation>
+        <translation>Entfernen</translation>
     </message>
     <message>
         <source>DETAILS</source>
-        <translation type="unfinished"></translation>
+        <translation>Details</translation>
     </message>
     <message>
         <source>&amp;FILE</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Datei</translation>
     </message>
     <message>
         <source>&amp;EXIT</source>
-        <translation type="unfinished"></translation>
+        <translation>B&amp;eenden</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>FILE</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei</translation>
     </message>
     <message>
         <source>NOT FOUND</source>
-        <translation type="unfinished"></translation>
+        <translation>nicht gefunden</translation>
     </message>
     <message>
         <source>TRY TO LOAD FALLBACK</source>
-        <translation type="unfinished"></translation>
+        <translation>Versuche einen Ersatz zu laden</translation>
     </message>
     <message>
         <source>WARNING</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>FALLBACK LANGUAGE (ENGLISH) ALSO NOT FOUND</source>
-        <translation type="unfinished"></translation>
+        <translation>Ersatzsprache (Englisch) wurde auch nicht gefunden</translation>
     </message>
     <message>
         <source>RUNNING ON DEVELOPMENT NAMING!</source>
-        <translation type="unfinished"></translation>
+        <translation>Laufe jetzt mit den Entwicklungsnamen!</translation>
     </message>
     <message>
         <source>FALLBACK LANGUAGE (ENGLISH) FOUND</source>
-        <translation type="unfinished"></translation>
+        <translation>Ersatzsprache (Englisch) gefunden</translation>
     </message>
     <message>
         <source>PROCEED WITH THIS</source>
-        <translation type="unfinished"></translation>
+        <translation>Fahre mit dieser fort</translation>
     </message>
     <message>
         <source>INFORMATION</source>
-        <translation type="unfinished"></translation>
+        <translation>Information</translation>
     </message>
 </context>
 </TS>

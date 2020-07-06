@@ -29,6 +29,7 @@ SOURCES += \
 HEADERS += \
     frmdetail.hpp \
     frmdetailadddomainhost.hpp \
+    frmdetailadddomainhosttype.hpp \
     frmmain.hpp \
     mycert.hpp \
     mycertaffecteddomain.hpp \

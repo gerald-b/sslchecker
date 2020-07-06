@@ -46,4 +46,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     english.ts \
-    german.ts
+    german.ts \
+    turkish.ts

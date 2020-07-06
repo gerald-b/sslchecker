@@ -2,6 +2,8 @@
 #define FRMDETAILADDDOMAINHOST_HPP
 
 #include <QMainWindow>
+#include <QMessageBox>
+#include <QTimer>
 #include "frmdetailadddomainhosttype.hpp"
 
 namespace Ui {

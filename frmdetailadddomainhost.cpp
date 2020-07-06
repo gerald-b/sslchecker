@@ -31,5 +31,9 @@ void FrmDetailAddDomainHost::setCurrentType(const FrmDetailAddDomainHostType &va
         this->setWindowTitle(tr("FRMDETAILADD - HOST"));
         this->ui->lblValue->setText(tr("ENTER HOSTNAME"));
         break;
+    default:
+        QMessageBox::critical(this,tr("ERROR"),tr("INVALID SELECTION - CLOSING"),QMessageBox::Ok,QMessageBox::Ok);
+        QTimer::singleShot(0, this, &QMainWindow::close);
+        break;
     }
 }

@@ -145,3 +145,17 @@ void FrmDetail::displayCert()
 }
 
 
+
+void FrmDetail::on_btnDomainsAdd_clicked()
+{
+    FrmDetailAddDomainHost *dadh = new FrmDetailAddDomainHost(FrmDetailAddDomainHostType::DOMAIN,this);
+    dadh->setWindowModality(Qt::ApplicationModal);
+    dadh->show();
+}
+
+void FrmDetail::on_btnHostsAdd_clicked()
+{
+    FrmDetailAddDomainHost *dadh = new FrmDetailAddDomainHost(FrmDetailAddDomainHostType::HOST,this);
+    dadh->setWindowModality(Qt::ApplicationModal);
+    dadh->show();
+}

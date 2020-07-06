@@ -2,6 +2,7 @@
 #define FRMDETAIL_HPP
 
 #include <QMainWindow>
+#include "frmdetailadddomainhost.hpp"
 #include "mycert.hpp"
 
 namespace Ui {
@@ -18,6 +19,11 @@ public:
 
 public slots:
     void getCert4View(MyCert * cert);
+
+private slots:
+    void on_btnDomainsAdd_clicked();
+
+    void on_btnHostsAdd_clicked();
 
 private:
     Ui::FrmDetail *ui;

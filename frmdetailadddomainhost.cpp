@@ -7,6 +7,7 @@ FrmDetailAddDomainHost::FrmDetailAddDomainHost(FrmDetailAddDomainHostType type, 
 {
     ui->setupUi(this);
     this->setCurrentType(type);
+    connect(this->ui->btnCancel,&QPushButton::clicked,this,&QMainWindow::close);
 }
 
 FrmDetailAddDomainHost::~FrmDetailAddDomainHost()

@@ -2,6 +2,7 @@
 #define FRMDETAILADDDOMAINHOST_HPP
 
 #include <QMainWindow>
+#include "frmdetailadddomainhosttype.hpp"
 
 namespace Ui {
 class FrmDetailAddDomainHost;
@@ -12,11 +13,17 @@ class FrmDetailAddDomainHost : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit FrmDetailAddDomainHost(QWidget *parent = nullptr);
+    explicit FrmDetailAddDomainHost(FrmDetailAddDomainHostType type, QWidget *parent = nullptr);
     ~FrmDetailAddDomainHost();
+
+    FrmDetailAddDomainHostType getCurrentType() const;
+
 
 private:
     Ui::FrmDetailAddDomainHost *ui;
+    FrmDetailAddDomainHostType currentType;
+
+    void setCurrentType(const FrmDetailAddDomainHostType &value);
 };
 
 #endif // FRMDETAILADDDOMAINHOST_HPP

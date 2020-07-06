@@ -22,4 +22,14 @@ FrmDetailAddDomainHostType FrmDetailAddDomainHost::getCurrentType() const
 void FrmDetailAddDomainHost::setCurrentType(const FrmDetailAddDomainHostType &value)
 {
     currentType = value;
+    switch (currentType) {
+    case FrmDetailAddDomainHostType::DOMAIN:
+        this->setWindowTitle(tr("FRMDETAILADD - DOMAIN"));
+        this->ui->lblValue->setText(tr("ENTER DOMAINNAME"));
+        break;
+    case FrmDetailAddDomainHostType::HOST:
+        this->setWindowTitle(tr("FRMDETAILADD - HOST"));
+        this->ui->lblValue->setText(tr("ENTER HOSTNAME"));
+        break;
+    }
 }

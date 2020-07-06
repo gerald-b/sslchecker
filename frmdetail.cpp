@@ -128,6 +128,19 @@ void FrmDetail::displayCert()
         this->ui->tblHosts->horizontalHeader()->setStretchLastSection(true);
         this->ui->tblDomains->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
         this->ui->tblDomains->horizontalHeader()->setStretchLastSection(true);
+        // Always select first row (if there is one)
+        // if (0 < this->ui->tblValidDates->rowCount())
+        // {
+        //    this->ui->tblValidDates->selectRow(0);
+        // }
+        if (0 < this->ui->tblDomains->rowCount())
+        {
+            this->ui->tblDomains->selectRow(0);
+        }
+        if (0 < this->ui->tblHosts->rowCount())
+        {
+            this->ui->tblHosts->selectRow(0);
+        }
     }
 }
 

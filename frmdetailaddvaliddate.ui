@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>359</width>
-    <height>125</height>
+    <height>137</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,24 +29,6 @@
      </spacer>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="lblValidTo">
-        <property name="text">
-         <string>VALIDTO</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QDateEdit" name="dateEdit_2">
-        <property name="displayFormat">
-         <string>dd.MM.yyyy</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QLabel" name="lblValidFrom">
@@ -56,7 +38,28 @@
        </widget>
       </item>
       <item>
-       <widget class="QDateEdit" name="dateEdit">
+       <widget class="QDateEdit" name="dateValidFrom">
+        <property name="displayFormat">
+         <string>dd.MM.yyyy</string>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="lblValidTo">
+        <property name="text">
+         <string>VALIDTO</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDateEdit" name="dateValidTo">
         <property name="displayFormat">
          <string>dd.MM.yyyy</string>
         </property>

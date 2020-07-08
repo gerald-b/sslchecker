@@ -188,3 +188,10 @@ void FrmDetail::addNewDomain(QString domain)
     this->getCert()->appendAffectedDomain(ad);
     this->displayCert();
 }
+
+void FrmDetail::on_btnVDAdd_clicked()
+{
+    FrmDetailAddValidDate *davd = new FrmDetailAddValidDate(this);
+    davd->setWindowModality(Qt::ApplicationModal);
+    davd->show();
+}

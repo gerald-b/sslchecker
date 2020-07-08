@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "frmdetailadddomainhost.hpp"
+#include "frmdetailaddvaliddate.hpp"
 #include "mycert.hpp"
 
 namespace Ui {
@@ -27,6 +28,8 @@ private slots:
 
     void addNewHost(QString host);
     void addNewDomain(QString domain);
+
+    void on_btnVDAdd_clicked();
 
 private:
     Ui::FrmDetail *ui;

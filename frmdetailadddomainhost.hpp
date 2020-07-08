@@ -24,6 +24,9 @@ signals:
     void sendNewHostname(QString host);
     void sendNewDomainname(QString domain);
 
+private slots:
+    void on_btnAdd_clicked();
+
 private:
     Ui::FrmDetailAddDomainHost *ui;
     FrmDetailAddDomainHostType currentType;

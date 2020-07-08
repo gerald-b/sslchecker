@@ -38,3 +38,26 @@ void FrmDetailAddDomainHost::setCurrentType(const FrmDetailAddDomainHostType &va
         break;
     }
 }
+
+void FrmDetailAddDomainHost::on_btnAdd_clicked()
+{
+    QString value = this->ui->txtValue->text();
+    bool isCloseProhibit = false;
+    if (FrmDetailAddDomainHostType::HOST == this->getCurrentType())
+    {
+        emit this->sendNewHostname(value);
+    }
+    else if(FrmDetailAddDomainHostType::DOMAIN == this->getCurrentType())
+    {
+        emit this->sendNewDomainname(value);
+    }
+    else
+    {
+        QMessageBox::critical(this,tr("ERROR"),tr("INVALID SELECTION - CLOSING"),QMessageBox::Ok,QMessageBox::Ok);
+        isCloseProhibit = true;
+    }
+    if (!isCloseProhibit)
+    {
+        this->close();
+    }
+}

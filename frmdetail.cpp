@@ -149,6 +149,7 @@ void FrmDetail::displayCert()
 void FrmDetail::on_btnDomainsAdd_clicked()
 {
     FrmDetailAddDomainHost *dadh = new FrmDetailAddDomainHost(FrmDetailAddDomainHostType::DOMAIN,this);
+    connect(dadh,&FrmDetailAddDomainHost::sendNewDomainname,this, &FrmDetail::addNewDomain);
     dadh->setWindowModality(Qt::ApplicationModal);
     dadh->show();
 }
@@ -156,16 +157,23 @@ void FrmDetail::on_btnDomainsAdd_clicked()
 void FrmDetail::on_btnHostsAdd_clicked()
 {
     FrmDetailAddDomainHost *dadh = new FrmDetailAddDomainHost(FrmDetailAddDomainHostType::HOST,this);
+    connect(dadh,&FrmDetailAddDomainHost::sendNewHostname,this, &FrmDetail::addNewHost);
     dadh->setWindowModality(Qt::ApplicationModal);
     dadh->show();
 }
 
 void FrmDetail::addNewHost(QString host)
 {
-
+    // ToDo - Errorhandling (duplicate...)
+    MyCertAffectedHost ah = MyCertAffectedHost(0,host,MyCertStates::ACTIVE);
+    this->getCert()->appendAffectedHost(ah);
+    this->displayCert();
 }
 
 void FrmDetail::addNewDomain(QString domain)
 {
-
+    // ToDo - Errorhandling (duplicate...)
+    MyCertAffectedDomain ad = MyCertAffectedDomain(0,domain,MyCertStates::ACTIVE);
+    this->getCert()->appendAffectedDomain(ad);
+    this->displayCert();
 }

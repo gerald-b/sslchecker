@@ -6,6 +6,8 @@ FrmDetailAddDomainHost::FrmDetailAddDomainHost(FrmDetailAddDomainHostType type, 
     ui(new Ui::FrmDetailAddDomainHost)
 {
     ui->setupUi(this);
+    this->setFixedSize(this->width(),this->height());
+
     this->setCurrentType(type);
     connect(this->ui->btnCancel,&QPushButton::clicked,this,&QMainWindow::close);
 }

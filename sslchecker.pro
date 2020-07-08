@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     frmdetail.cpp \
     frmdetailadddomainhost.cpp \
+    frmdetailaddvaliddate.cpp \
     main.cpp \
     frmmain.cpp \
     mycert.cpp \
@@ -30,6 +31,7 @@ HEADERS += \
     frmdetail.hpp \
     frmdetailadddomainhost.hpp \
     frmdetailadddomainhosttype.hpp \
+    frmdetailaddvaliddate.hpp \
     frmmain.hpp \
     mycert.hpp \
     mycertaffecteddomain.hpp \
@@ -41,6 +43,7 @@ HEADERS += \
 FORMS += \
     frmdetail.ui \
     frmdetailadddomainhost.ui \
+    frmdetailaddvaliddate.ui \
     frmmain.ui
 
 # Default rules for deployment.

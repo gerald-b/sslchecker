@@ -159,3 +159,13 @@ void FrmDetail::on_btnHostsAdd_clicked()
     dadh->setWindowModality(Qt::ApplicationModal);
     dadh->show();
 }
+
+void FrmDetail::addNewHost(QString host)
+{
+
+}
+
+void FrmDetail::addNewDomain(QString domain)
+{
+
+}

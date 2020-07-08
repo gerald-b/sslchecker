@@ -25,6 +25,9 @@ private slots:
 
     void on_btnHostsAdd_clicked();
 
+    void addNewHost(QString host);
+    void addNewDomain(QString domain);
+
 private:
     Ui::FrmDetail *ui;
     MyCert * _cert;

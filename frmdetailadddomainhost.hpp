@@ -20,6 +20,9 @@ public:
 
     FrmDetailAddDomainHostType getCurrentType() const;
 
+signals:
+    void sendNewHostname(QString host);
+    void sendNewDomainname(QString domain);
 
 private:
     Ui::FrmDetailAddDomainHost *ui;

@@ -2,6 +2,8 @@
 #define FRMDETAIL_HPP
 
 #include <QMainWindow>
+#include "frmdetailadddomainhost.hpp"
+#include "frmdetailaddvaliddate.hpp"
 #include "mycert.hpp"
 
 namespace Ui {
@@ -19,6 +21,16 @@ public:
 public slots:
     void getCert4View(MyCert * cert);
 
+private slots:
+    void on_btnDomainsAdd_clicked();
+
+    void on_btnHostsAdd_clicked();
+
+    void addNewHost(QString host);
+    void addNewDomain(QString domain);
+
+    void on_btnVDAdd_clicked();
+
 private:
     Ui::FrmDetail *ui;
     MyCert * _cert;
@@ -26,6 +38,7 @@ private:
     MyCert *getCert() const;
     void setCert(MyCert *cert);
 
+    void clearDisplay(void);
     void displayCert(void);
 };
 

@@ -35,10 +35,21 @@ void FrmDetail::setCert(MyCert *cert)
     _cert = cert;
 }
 
+void FrmDetail::clearDisplay()
+{
+    this->ui->txtCertID->setText(QString::number(-1));
+    this->ui->txtCertName->setText("");
+    this->ui->txtAlertMail->setPlainText("");
+    this->ui->tblValidDates->setRowCount(0);
+    this->ui->tblHosts->setRowCount(0);
+    this->ui->tblDomains->setRowCount(0);
+}
+
 void FrmDetail::displayCert()
 {
     if (nullptr != this->getCert())
     {
+        this->clearDisplay();
         this->ui->txtCertID->setText(QString::number(this->getCert()->certID()));
         this->ui->txtCertName->setText(this->getCert()->certName());
         // Display ValidDates
@@ -128,7 +139,59 @@ void FrmDetail::displayCert()
         this->ui->tblHosts->horizontalHeader()->setStretchLastSection(true);
         this->ui->tblDomains->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
         this->ui->tblDomains->horizontalHeader()->setStretchLastSection(true);
+        // Always select first row (if there is one)
+        // if (0 < this->ui->tblValidDates->rowCount())
+        // {
+        //    this->ui->tblValidDates->selectRow(0);
+        // }
+        if (0 < this->ui->tblDomains->rowCount())
+        {
+            this->ui->tblDomains->selectRow(0);
+        }
+        if (0 < this->ui->tblHosts->rowCount())
+        {
+            this->ui->tblHosts->selectRow(0);
+        }
     }
 }
 
 
+
+void FrmDetail::on_btnDomainsAdd_clicked()
+{
+    FrmDetailAddDomainHost *dadh = new FrmDetailAddDomainHost(FrmDetailAddDomainHostType::DOMAIN,this);
+    connect(dadh,&FrmDetailAddDomainHost::sendNewDomainname,this, &FrmDetail::addNewDomain);
+    dadh->setWindowModality(Qt::ApplicationModal);
+    dadh->show();
+}
+
+void FrmDetail::on_btnHostsAdd_clicked()
+{
+    FrmDetailAddDomainHost *dadh = new FrmDetailAddDomainHost(FrmDetailAddDomainHostType::HOST,this);
+    connect(dadh,&FrmDetailAddDomainHost::sendNewHostname,this, &FrmDetail::addNewHost);
+    dadh->setWindowModality(Qt::ApplicationModal);
+    dadh->show();
+}
+
+void FrmDetail::addNewHost(QString host)
+{
+    // ToDo - Errorhandling (duplicate...)
+    MyCertAffectedHost ah = MyCertAffectedHost(0,host,MyCertStates::ACTIVE);
+    this->getCert()->appendAffectedHost(ah);
+    this->displayCert();
+}
+
+void FrmDetail::addNewDomain(QString domain)
+{
+    // ToDo - Errorhandling (duplicate...)
+    MyCertAffectedDomain ad = MyCertAffectedDomain(0,domain,MyCertStates::ACTIVE);
+    this->getCert()->appendAffectedDomain(ad);
+    this->displayCert();
+}
+
+void FrmDetail::on_btnVDAdd_clicked()
+{
+    FrmDetailAddValidDate *davd = new FrmDetailAddValidDate(this);
+    davd->setWindowModality(Qt::ApplicationModal);
+    davd->show();
+}

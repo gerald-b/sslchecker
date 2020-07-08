@@ -97,6 +97,80 @@
     </message>
 </context>
 <context>
+    <name>FrmDetailAddDomainHost</name>
+    <message>
+        <source>MainWindow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DUMMY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ADD</source>
+        <translation type="unfinished">Hinzufügen</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FRMDETAILADD - DOMAIN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ENTER DOMAINNAME</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FRMDETAILADD - HOST</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ENTER HOSTNAME</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ERROR</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>INVALID SELECTION - CLOSING</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>FrmDetailAddValidDate</name>
+    <message>
+        <source>MainWindow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>VALIDFROM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dd.MM.yyyy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>VALIDTO</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ADD</source>
+        <translation type="unfinished">Hinzufügen</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FRMDETAILADD - VALIDDATE</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FrmMain</name>
     <message>
         <source>FRMMAIN</source>
@@ -145,6 +219,14 @@
     <message>
         <source>&amp;EXIT</source>
         <translation>B&amp;eenden</translation>
+    </message>
+    <message>
+        <source>ERROR</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NO ENTRY FOR DETAILVIEW SELECTED</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

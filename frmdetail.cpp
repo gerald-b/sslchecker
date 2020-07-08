@@ -35,10 +35,21 @@ void FrmDetail::setCert(MyCert *cert)
     _cert = cert;
 }
 
+void FrmDetail::clearDisplay()
+{
+    this->ui->txtCertID->setText(QString::number(-1));
+    this->ui->txtCertName->setText("");
+    this->ui->txtAlertMail->setPlainText("");
+    this->ui->tblValidDates->setRowCount(0);
+    this->ui->tblHosts->setRowCount(0);
+    this->ui->tblDomains->setRowCount(0);
+}
+
 void FrmDetail::displayCert()
 {
     if (nullptr != this->getCert())
     {
+        this->clearDisplay();
         this->ui->txtCertID->setText(QString::number(this->getCert()->certID()));
         this->ui->txtCertName->setText(this->getCert()->certName());
         // Display ValidDates

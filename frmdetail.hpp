@@ -35,6 +35,7 @@ private:
     MyCert *getCert() const;
     void setCert(MyCert *cert);
 
+    void clearDisplay(void);
     void displayCert(void);
 };
 
